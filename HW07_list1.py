@@ -22,10 +22,9 @@
 # and last chars of the string are the same.
 # Note: python does not have a ++ operator, but += works.
 def match_ends(words):
-    # +++your code here+++
-    return
-
-
+    long_words = [x for x in words if len(x) >= 2 ]
+    return len([x for x in long_words if x[:1] == x[-1:]])
+    
 # B. front_x
 # Given a list of strings, return a list with the strings
 # in sorted order, except group all the strings that begin with 'x' first.
@@ -34,9 +33,14 @@ def match_ends(words):
 # Hint: this can be done by making 2 lists and sorting each of them
 # before combining them.
 def front_x(words):
-    # +++your code here+++
-    return
-
+    x_words = []
+    other_words = []
+    for w in words:
+        if w[0] == "x":
+            x_words.append(w)
+        else:
+            other_words.append(w)
+    return sorted(x_words) + sorted(other_words)
 
 # C. sort_last
 # Given a list of non-empty tuples, return a list sorted in increasing
@@ -45,9 +49,10 @@ def front_x(words):
 # [(2, 2), (1, 3), (3, 4, 5), (1, 7)]
 # Hint: use a custom key= function to extract the last element form each tuple.
 def sort_last(tuples):
-    # +++your code here+++
-    return
-
+    return sorted(tuples, key=get_last_element)
+    
+def get_last_element(tuple):
+    return tuple[-1]
 
 # Simple provided test() function used in main() to print
 # what each function returns vs. what it's supposed to return.
@@ -56,7 +61,7 @@ def test(got, expected):
         prefix = ' OK '
     else:
         prefix = '  X '
-    print('%s got: %s expected: %s'.format(prefix, repr(got), repr(expected)))
+    print('{}s got: {} expected: {}'.format(prefix, repr(got), repr(expected)))
 
 
 # Calls the above functions with interesting inputs.

@@ -1,0 +1,11 @@
+lst = [1, 2, 3, 4]
+" ".join(str(item) for item in lst)
+
+lst = ["A", "BCA", "AB"]
+print(sorted(lst))
+
+# the return value of len is the sorting key
+print(sorted(lst, key=len)) 
+
+def sum_last_two(lst):
+    return
