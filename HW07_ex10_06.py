@@ -16,7 +16,9 @@ def main():
     # Commented test cases below
     # print(is_sorted([1, 2, 3]))
     # print(is_sorted([[1, 2, 3], [4, 5], [6]]))
+    # print(is_sorted(["apple", "banana", "carrot"]))
     pass
+
     
 if __name__ == "__main__":
     main()
