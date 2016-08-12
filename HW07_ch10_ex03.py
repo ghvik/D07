@@ -8,5 +8,21 @@
 #  - Do not put anything but pass in main()
 
 def cumulative_sum(lst):
-    sum_so_far = []
+    if len(lst) <= 1:
+        return lst
+    else:
+        # Recursive step.
+        sum_so_far = cumulative_sum(lst[:-1])
+        # Append the next sum to the list of sums.
+        return sum_so_far + [sum_so_far[-1] + lst[-1]]
+        
+def main():
+    # Commented test cases below:
+    # print(cumulative_sum([1, 2, 3]))
+    # print(cumulative_sum([3,5,-6]))
+    # print(cumulative_sum([]))
+    pass
+    
+if __name__ == "__main__":
+    main()
     
